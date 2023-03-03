@@ -48,10 +48,11 @@ jobs:
       run: ${{github.workspace}}/bin/Release/stltest.exe
       shell: cmd
     
-    - uses: actions/upload-artifact@v3
+    - name: Upload Artifact Release
+      uses: softprops/action-gh-release@v1
       with:
-        name: stltest
-        path: ${{github.workspace}}/bin/Release/stltest.exe
+        name: stltest.exe
+        files: ${{github.workspace}}/bin/Release/stltest.exe
 
 
 
